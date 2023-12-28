@@ -36,7 +36,7 @@ function changeStatus(index) {
       @change="changeStatus(index)"
     />
     <span :class="item.isCompleted ? 'line-through' : ''"
-      >{{ item.id }} - {{ item.task }}</span
+      class="pl-2">{{ item.id }} - {{ item.task }}</span
     >
   </div>
 </template>
