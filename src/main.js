@@ -11,11 +11,19 @@ import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBackward } from "@fortawesome/free-solid-svg-icons";
+import { faForward } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
 library.add(faUserSecret);
 library.add(faPlus);
 library.add(faMinus);
 library.add(faTrash);
+library.add(faCheck);
+library.add(faXmark);
+library.add(faBackward);
+library.add(faForward);
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
