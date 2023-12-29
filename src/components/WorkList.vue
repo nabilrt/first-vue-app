@@ -30,15 +30,14 @@ const onNextClick = () => {
 </script>
 
 <template>
-  <div class="font-bold text-xl text-justify">My Work List</div>
+  <div class="font-bold text-xl text-center">My Work List</div>
   <div v-if="loading">Loading...</div>
   <div v-else>
-    <table class="border border-violet-400 p-3">
-      <thead>
+    <table class="border border-violet-400 w-full">
+      <thead class="p-4">
         <tr class="space-x-3">
           <th>Id</th>
           <th>Title</th>
-          <th>Completed</th>
         </tr>
       </thead>
       <tbody class="border border-violet-400">
@@ -47,9 +46,10 @@ const onNextClick = () => {
           :key="index"
           class="border border-violet-300 text-center"
         >
-          <td>{{ todo.id }}</td>
+          <td class="underline">
+            <router-link :to="`/todo/${todo.id}`">{{ todo.id }}</router-link>
+          </td>
           <td>{{ todo.title.slice(0, 10) }}</td>
-          <td>{{ todo.completed }}</td>
         </tr>
       </tbody>
     </table>

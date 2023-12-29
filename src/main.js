@@ -15,15 +15,21 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
 import { faForward } from "@fortawesome/free-solid-svg-icons";
+import { router } from "./router";
 
 /* add icons to the library */
-library.add(faUserSecret);
-library.add(faPlus);
-library.add(faMinus);
-library.add(faTrash);
-library.add(faCheck);
-library.add(faXmark);
-library.add(faBackward);
-library.add(faForward);
+library.add(
+  faUserSecret,
+  faPlus,
+  faMinus,
+  faTrash,
+  faCheck,
+  faXmark,
+  faBackward,
+  faForward
+);
 
-createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
+createApp(App)
+  .use(router)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount("#app");

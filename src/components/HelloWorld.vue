@@ -18,7 +18,7 @@ function resetCount() {
 
 <template>
   <div
-    class="p-12 w-1/4 m-auto mt-40 border-2 text-center h-1/2 flex flex-col justify-center items-center space-y-5 rounded-md shadow-lg"
+    class="p-12 w-1/2 m-auto mt-40 border-2 text-center h-1/2 flex flex-col justify-center items-center space-y-5 rounded-md shadow-lg"
   >
     <p class="font-semibold text-black text-2xl">Count: {{ count }}</p>
     <div class="flex space-x-2 mt-4">
@@ -43,7 +43,9 @@ function resetCount() {
         <font-awesome-icon :icon="['fas', 'trash']" />
       </button>
     </div>
-    <WorkList />
-    <AddTodo />
+    <div>
+      <WorkList />
+      <AddTodo />
+    </div>
   </div>
 </template>

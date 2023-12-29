@@ -5,16 +5,21 @@ import TodoList from "./TodoList.vue";
 const task = ref("");
 const date = ref("");
 const dateRef = ref(null);
+const errorMessage = ref("");
 
 const todolist = ref([]);
 const addTodo = () => {
-  todolist.value.push({
-    task: task.value,
-    date: date.value,
-    isCompleted: false,
-  });
-  task.value = "";
-  date.value = "";
+  if (task.value === "" || date.value === "") {
+    setTimeout(() => (errorMessage.value = "Please fill all the fields"), 1000);
+  } else {
+    todolist.value.push({
+      task: task.value,
+      date: date.value,
+      isCompleted: false,
+    });
+    task.value = "";
+    date.value = "";
+  }
 };
 
 const completeTodo = (index) => {
@@ -44,12 +49,14 @@ onMounted(() => {
         type="text"
         v-model="task"
         placeholder="Enter Task"
+        @focus="errorMessage=''"
         class="p-3 border border-blue-500 rounded-lg"
       />
       <input
         type="date"
         v-model="date"
         ref="dateRef"
+        @focus="errorMessage=''"
         class="p-3 border border-blue-500 rounded-lg"
       />
       <button
@@ -60,6 +67,7 @@ onMounted(() => {
         Add
       </button>
     </form>
+    <div v-if="errorMessage!==''" class="text-red-700">Please Fill in All the Fields</div>
     <div class="space-y-2">
       <div
         v-for="(todo, index) in todolist"
